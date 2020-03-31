@@ -73,6 +73,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 
+# install mariadb client
+sudo apt install mariadb-client-core-10.1
+
 echo
 echo Finished
 echo

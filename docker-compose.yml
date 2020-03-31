@@ -6,7 +6,7 @@ services:
     image: mariadb
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: ${MY_SQL_ROOT_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${IMONGR_DB_NAME}
       MYSQL_USER: ${IMONGR_DB_USER}
       MYSQL_PASSWORD: ${IMONGR_DB_PASS}
