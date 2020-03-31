@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MY_SQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${IMONGR_DB_NAME}
+      MYSQL_USER: ${IMONGR_DB_USER}
+      MYSQL_PASSWORD: ${IMONGR_DB_PASS}
+    volumes:
+      - ~/mdbdata/imongr:/var/lib/mysql
+      - ~/mdbdata/imongr_init:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
