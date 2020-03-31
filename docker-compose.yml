@@ -11,8 +11,8 @@ services:
       MYSQL_USER: ${IMONGR_DB_USER}
       MYSQL_PASSWORD: ${IMONGR_DB_PASS}
     volumes:
-      - ~/mdbdata/imongr:/var/lib/mysql
-      - ~/mdbdata/imongr_init:/docker-entrypoint-initdb.d
+      - ./mdbdata/imongr:/var/lib/mysql
+      - ./mdbdata/imongr_init:/docker-entrypoint-initdb.d
     ports:
       - 3306:3306
 
