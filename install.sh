@@ -69,6 +69,14 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-
 # provide right mode to binary
 sudo chmod +x /usr/local/bin/docker-compose
 
+# prepare use of awslogs from docker-compose (keys and secrets to be added manually)
+sudo mkdir -p /etc/systemd/system/docker.service.d/
+cat <<EOF > override.conf
+[Service]
+ExecStart=
+EOF
+sudo mv override.conf /etc/systemd/system/docker.service.d/
+
 # (re)start dockerd
 sudo systemctl daemon-reload
 sudo systemctl restart docker
