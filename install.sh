@@ -71,11 +71,11 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # prepare use of awslogs from docker-compose (keys and secrets to be added manually)
 sudo mkdir -p /etc/systemd/system/docker.service.d/
-cat <<EOF > override.conf
+cat <<EOF > awslogs.conf
 [Service]
-ExecStart=
+Environment=
 EOF
-sudo mv override.conf /etc/systemd/system/docker.service.d/
+sudo mv awslogs.conf /etc/systemd/system/docker.service.d/
 
 # (re)start dockerd
 sudo systemctl daemon-reload
@@ -87,6 +87,6 @@ sudo apt install mariadb-client-core-10.1
 echo
 echo Finished
 echo
-echo Please remember to re-login before running docker-compose
+echo Please remember to add aws key/secrets to /etc/systemd/system/docker.service.d/awslogs.conf and re-login before running docker-compose
 echo
 
