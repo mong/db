@@ -15,9 +15,23 @@ services:
       - ./mdbdata/imongr_init:/docker-entrypoint-initdb.d
     ports:
       - 3306:3306
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: eu-west-1
+        awslogs-group: db
+        awslogs-stream: imongr
+        awslogs-create-group: "true"
 
   adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: eu-west-1
+        awslogs-group: db
+        awslogs-stream: adminer
+        awslogs-create-group: "false"
