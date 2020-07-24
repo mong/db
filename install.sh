@@ -84,6 +84,21 @@ sudo systemctl restart docker
 # install mariadb client
 sudo apt install mariadb-client-core-10.1
 
+# Make crontab entry for dumping qmongr db every night at 0100
+echo
+echo Setting up cron job for db dump
+echo
+crontab -l > current
+echo "0 1 * * * $HOME/db/dump_imongr_db.sh >/dev/null 2>&1" >> current
+crontab current
+rm current
+
+current=`crontab -l`
+echo
+echo Now, current crontab is:
+echo
+echo "$current"
+echo
 echo
 echo Finished
 echo
