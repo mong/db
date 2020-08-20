@@ -145,16 +145,19 @@ INSERT INTO `ind` (`id`, `dg_id`, `include`, `title`, `name`, `type`, `measure_u
 ('rygg_varighet_bensmerter',	NULL,	1,	'Varighet av utstrålende smerter (til ben) før prolapskirurgi',	'ind1_Varighet_bensemerter_Rygg',	'andel',	NULL,	NULL,	NULL,	NULL,	0.200,	0.200,	0,	'Utstrålende smerter mer enn 1 år før prolapskirurgi. Rapportert av pasient før operasjon.',	'I nasjonale retningslinjer (2007) er det anbefalt å operere pasienter for skiveprolaps før utstrålende smerter har vart for lenge, helst innen ett år. Dette samsvarer godt med nyere rapporter og forskning fra NKR.  Derfor bør denne pasientgruppen håndteres raskt og effektivt når beslutning om operasjon er tatt og ikke-kirurgisk behandling har vært forsøkt. Lang varighet av utstrålende smerter før operasjon kan blant annet skyldes lange ventetider hos fastlege og poliklinikk samt lav operasjonskapasitet på sykehuset',	15);
 
 INSERT INTO `nation` (`orgnr`, `full_name`, `short_name`) VALUES
-(1,	'Nasjonalt',	'Nasjonalt');
+(1,	'Nasjonalt',	'Nasjonalt'),
+(111111111,	'Udefinerte land',	'Udefinerte land');
 
 INSERT INTO `rhf` (`orgnr`, `full_name`, `short_name`, `nation_orgnr`) VALUES
 (999,	'Private',	'Private',	1),
+(222222222,	'Udefinerte regionale helseforetak',	'Udefinerte regionale helseforetak',	111111111),
 (883658752,	'HELSE NORD RHF',	'Helse Nord RHF',	1),
 (983658725,	'HELSE VEST RHF',	'Helse Vest RHF',	1),
 (983658776,	'HELSE MIDT-NORGE RHF',	'Helse Midt-Norge RHF',	1),
 (991324968,	'HELSE SØR-ØST RHF',	'Helse Sør-Øst RHF',	1);
 
 INSERT INTO `hf` (`orgnr`, `full_name`, `short_name`, `rhf_orgnr`) VALUES
+(333333333,	'Udefinerte helseforetak',	'Udefinerte helseforetak',	222222222),
 (816085292,	'VOLVAT MEDISINSKE SENTER NORD OG MIDT-NORGE AS',	'Private sykehus',	999),
 (883971752,	'SUNNAAS SYKEHUS HF',	'Sunnaas HF',	991324968),
 (883974832,	'ST. OLAVS HOSPITAL HF',	'St. Olavs HF',	983658776),
@@ -193,6 +196,7 @@ INSERT INTO `hf` (`orgnr`, `full_name`, `short_name`, `rhf_orgnr`) VALUES
 (999238351,	'NIMI AS',	'Private sykehus',	999);
 
 INSERT INTO `hospital` (`orgnr`, `full_name`, `short_name`, `hf_orgnr`) VALUES
+(444444444,	'Udefinerte sykehus',	'Udefinerte sykehus',	333333333),
 (813381192,	'ALERIS SYKEHUS HINNA PARK',	'Aleris Hinna Park',	943545634),
 (817178782,	'MEDI 3 RINGVOLL KLINIKKEN AS AVD KIRURGI HOBØL',	'Medi 3 Hobøl',	980693732),
 (821265002,	'VOLVAT MEDISINSKE SENTER AS LILLEHAMMER',	'Volvat Lillehammer',	953164701),
