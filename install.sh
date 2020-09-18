@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### Install script for docker and db sever at ubuntu 18.04 (bionic)
+### Install script for docker and db sever at ubuntu 20.04 (focal fossa)
 
 # get vars and set env accordingly
 echo
@@ -49,7 +49,7 @@ sudo apt install -y apt-transport-https ca-certificates curl software-properties
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 # add apt source
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 
 # update package database
 sudo apt update
