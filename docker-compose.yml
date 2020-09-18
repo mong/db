@@ -21,7 +21,7 @@ services:
       options:
         awslogs-region: eu-west-1
         awslogs-group: db
-        awslogs-stream: imongr
+        awslogs-stream: db
         awslogs-create-group: "true"
 
   adminer:
@@ -36,5 +36,5 @@ services:
       options:
         awslogs-region: eu-west-1
         awslogs-group: db
-        awslogs-stream: adminer
+        awslogs-stream: db-adminer
         awslogs-create-group: "false"
