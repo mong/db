@@ -82,7 +82,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 
 # install mariadb client
-sudo apt install mariadb-client-core-10.1
+sudo apt install mariadb-client-core-10.3
 
 # Make crontab entry for dumping qmongr db every night at 0100
 echo
