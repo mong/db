@@ -1,29 +1,23 @@
 #!/bin/bash
 
-if [ -z "$1" ]; then
-        echo "One argument of either 'daily', 'weekly' or 'montly' required."
-        echo "Terminating."
-        exit
-fi
-
 BACKUPDIR=~/backup-imongr-db/$1
 
 if [ $1 = "daily" ]; then
-        RETIREDAYS=7
-        TIMESTAMP=$(date +%a-%F)
-        echo "Running daily backup..."
-fi
-
-if [ $1 = "weekly" ]; then
-        RETIREDAYS=30
-        TIMESTAMP=$(date +%U-%F)
-        echo "Running weekly backup..."
-fi
-
-if [ $1 = "monthly" ]; then
-        RETIREDAYS=90
-        TIMESTAMP=$(date +%b-%F)
-        echo "Running monthly backup..."
+  RETIREDAYS=7
+  TIMESTAMP=$(date +%a-%F)
+  echo "Running daily backup..."
+elif [ $1 = "weekly" ]; then
+  RETIREDAYS=30
+  TIMESTAMP=$(date +%U-%F)
+  echo "Running weekly backup..."
+elif [ $1 = "monthly" ]; then
+  RETIREDAYS=92
+  TIMESTAMP=$(date +%b-%F)
+  echo "Running monthly backup..."
+else
+  echo "One argument of either 'daily', 'weekly' or 'monthly' required."
+  echo "Terminating."
+  exit
 fi
 
 function delete_old_backups()
